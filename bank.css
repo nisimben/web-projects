@@ -1,0 +1,32 @@
+body{
+    width: 60%;
+    text-align: center;
+    margin: auto;
+    padding: 60px 0;
+}
+.flex {
+    display: flex;
+}
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    
+}
+section{
+    text-align: left;
+    padding: 0 15%;
+    overflow:auto;
+    max-height: 45vh;
+}
+.account , .transaction{
+    padding: 5px;
+    border: 1px solid blueviolet;
+    margin: 5px 0;
+}
+.account:hover, .transaction:hover{
+    background: #eee;
+    cursor: pointer;
+}
+.account.active{
+    background: #b5b5e9;
+}
