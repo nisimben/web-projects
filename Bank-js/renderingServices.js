@@ -8,7 +8,6 @@
     for(let i = 0;i<propertiesTamplate.length; i++){
       let p = propertiesTamplate[i];
       p =p.replace('[','').replace(']','')
-      console.log(p)
       propertiesTamplate[i]=p
     }
     dataArr.forEach(item => {

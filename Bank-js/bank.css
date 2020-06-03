@@ -27,6 +27,10 @@ section{
     background: #eee;
     cursor: pointer;
 }
-.account.active{
+/* .account.active{
     background: #b5b5e9;
+} */
+.account:focus ,.transaction:focus{
+    background: pink
+
 }
