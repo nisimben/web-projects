@@ -4,9 +4,8 @@ document.onreadystatechange = function (ev) {
         bankStart();
     }
 }
-function bankStart() {
-    console.log('bankStart');
-    //document.querySelector('.accounts-list').innerHTML = shukiRender(templates.account, BankDb.Accounts)
+function bankStart(){
+    console.log('bank start')
     let accountsCustomArray = []
     BankDb.Accounts.forEach(acc => {
         let myClient = BankDb.API.getCliendById(acc.ClientId)
@@ -18,9 +17,8 @@ function bankStart() {
         }
         accountsCustomArray.push(o)
     });
-    document.querySelector('.accounts-list').innerHTML = render(templates.account, accountsCustomArray)
+    document.querySelector('.myAccountLists').innerHTML = render(templates.account, accountsCustomArray)
     initEvents();
-    
 }
 let templates = {
     account: `<div class="account" flex-col tabIndex =1">
@@ -33,9 +31,8 @@ let templates = {
         <div> <label>ID: </label> <span>[ID]</span> </div>
         <div> <label>Type : </label> <span>[Type]</span> </div>
         <div> <label>Amount : </label> <span>[Amount]</span> </div> 
-    </div>`
+</div>`
 }
-
 //events
 function initEvents() {
     let allAccountsDiv = document.querySelectorAll('.account')
@@ -43,14 +40,9 @@ function initEvents() {
 
     // set css
     allAccountsDiv.forEach(accDiv =>{
-        accDiv.onclick = (ev)=>{
+        accDiv.onclick = ()=>{
             console.log(accDiv)
-            let myAccDiv = ev.target.closest('.account')
-            console.log(myAccDiv);
-            
-            // document.querySelectorAll('.account.active').forEach(activeDiv => 
-            //     activeDiv.className = activeDiv.className.replace(' active',''))
-            // myAccDiv.className += " active"
+ 
    //set  transactions
             let accountID =accDiv.querySelector('span').textContent
             let accTrans = BankDb.API.getTransactionsByAccountId(accountID)
@@ -58,7 +50,7 @@ function initEvents() {
             let detailsSection =document.querySelector('.details-panel')
 
             let h =document.getElementById('trazTitle')
-            h.innerHTML = `detail for account ${accountID}`
+            h.innerHTML = `detail for account ${+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++}`
             detailsSection.innerHTML = render(templates.transaction,accTrans)
             
         }
